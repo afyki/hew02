@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+	<link href="css/design.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+	$(function(){
+		$('a[href^=#]').click(function(){
+			var speed = 1000;
+			var href= $(this).attr("href");
+			var target = $(href == "#" || href == "" ? 'html' : href);
+			var position = target.offset().top;
+			$("html, body").animate({scrollTop:position}, speed, "swing");
+			return false;
+		});
+	});
+</script>
+
+<script>
+$(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		// more then one submenu open?
+		this.multiple = multiple || false;
+
+		var dropdownlink = this.el.find('.dropdownlink');
+		dropdownlink.on('click',
+		{ el: this.el, multiple: this.multiple },
+		this.dropdown);
+	};
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el,
+		$this = $(this),
+		//this is the ul.submenuItems
+		$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if(!e.data.multiple) {
+			//show only one menu at the same time
+			$el.find('.submenuItems').not($next).slideUp().parent().removeClass('open');
+		}
+	}
+
+	var accordion = new Accordion($('.accordion-menu'), false);
+})
+</script>
+</head>
+
+
+<body>
+	<!--「aos」CSSの読込-->
+	<link rel="stylesheet" href="./aos.css">
+	<!--「aos」JSの読込-->
+	<script src="./aos.js"></script>
+
+	<script>
+	AOS.init({
+		offset: 200,
+		duration: 1000,
+		easing: 'ease-in-sine',
+		delay: 100,
+	});
+</script>
+
+
+
+
+<div id="wrapper00">
+	<div class="haikei"  data-aos="zoom-out"data-aos-duration="1900">
+		<img src="images/gggg.jpg">
+		<p class="h001" data-aos="zoom-in-right" data-aos-duration="2900">T</p>
+		<p class="h002" data-aos="zoom-in-up" data-aos-duration="2850">a</p>
+		<p class="h003" data-aos="zoom-in-down" data-aos-duration="2800">k</p>
+		<p class="h004" data-aos="zoom-in-right" data-aos-duration="2700">e</p>
+		<p class="h005" data-aos="zoom-in-left" data-aos-duration="2900">a</p>
+		<p class="h006" data-aos="zoom-in-right" data-aos-duration="2850">w</p>
+		<p class="h007" data-aos="zoom-in-right" data-aos-duration="2800">a</p>
+		<p class="h008" data-aos="zoom-in-right" data-aos-duration="2700">y</p>
+		<p class="h009" data-aos="zoom-in" data-aos-duration="2900">&</p>
+		<p class="h010" data-aos="zoom-in-right" data-aos-duration="2900">D</p>
+		<p class="h011" data-aos="zoom-in-right" data-aos-duration="2850">e</p>
+		<p class="h012" data-aos="fade-down-right" data-aos-duration="2800">l</p>
+		<p class="h013" data-aos="fade-down-right" data-aos-duration="2700">i</p>
+		<p class="h014" data-aos="fade-down" data-aos-duration="2600">v</p>
+		<p class="h015" data-aos="fade-down-left" data-aos-duration="2500">e</p>
+		<p class="h016" data-aos="fade-up" data-aos-duration="2500">r</p>
+		<p class="h017" data-aos="fade-left" data-aos-duration="2400">y</p>
+		<p class="h018" data-aos="fade-left" data-aos-duration="3000">Sandwiches</p>
+	</div>
+	<div id="header">
+		<div class="title01">
+			<a href="#"><img src="images/aaaa01.png"></a>
+			<div id="nav">
+				<h2>北新地サンド</h2>
+				<ul class="accordion-menu">
+					<li>
+						<div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i> MENU
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</div>
+						<ul class="submenuItems">
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="menu.html">❐GRANDMENU</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="dropdownlink"><i class="fa fa-paper-plane" aria-hidden="true"></i>概要
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</div>
+						<ul class="submenuItems">
+							<li><a href="#introduce">INTRODUCE</a></li>
+							<li><a href="#Concept">CONCEPT</a></li>
+							<li><a href="tenpo.html">❐店舗情報</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i> 口コミ
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</div>
+						<ul class="submenuItems">
+							<li><a href="index2.php">❐レビュー</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="dropdownlink"><i class="fa fa-motorcycle" aria-hidden="true"></i>アクセス
+							<i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</div>
+						<ul class="submenuItems">
+							<li><a href="akusesu.html">❐北新地</a></li>
+							<li><a href="akusesu2.html">❐心斎橋</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="wrapper">
+		<main>
+			<div class="cd-fixed-bg cd-bg-1">
+				<div class="midasi">
+				</div>
+			</div>
+
+			<div class="cd-scrolling-bg1 cd-color-1">
+				<div class="midasi2" data-aos="zoom-out"data-aos-duration="400">
+					<h2>Introduce</h2>
+				</div>
+				<div class="cd-container">
+					<a id="introduce"></a>
+					<section class="contents00">
+						<section class="contents">
+							<p class="syoukai" data-aos="fade-left"data-aos-duration="500">Souvenir luxury</p>	<!--水色-->
+							<p class="syoukai11" data-aos="fade-left"data-aos-duration="500">Katsusando</p>
+							<div class="syoukai00" data-aos="fade-left"data-aos-duration="500">
+								<p data-aos="fade-left"data-aos-duration="700">お土産にオシャレな</p>
+							</div>
+							<div class="syoukai001" data-aos="fade-left"data-aos-duration="500">
+								<p data-aos="fade-left"data-aos-duration="700">高級カツサンドを。</p>
+							</div>
+							<p class="syoukai000" data-aos="fade-left"data-aos-duration="800">メニュー豊富なテイクアウト。</p>
+							<p class="syoukai0001" data-aos="fade-left"data-aos-duration="800">素材製法にこだわった</p>
+							<p class="syoukai0002" data-aos="fade-left"data-aos-duration="700">カツサンドの数々。</p>
+							<p class="syoukai0003" data-aos="fade-left"data-aos-duration="700">アクセサリーショップの様な高級感</p>
+							<p class="syoukai0004" data-aos="fade-left"data-aos-duration="800">あふれる紙バッグでおもたせにも最適。</p>
+							<div class="sankaku11" data-aos="zoom-in-up"data-aos-duration="1100">
+								<img src="images/sankaku1.png">
+							</div>
+							<div class="sankaku22" data-aos="zoom-in-up"data-aos-duration="900">
+								<img src="images/sankaku2.png">
+							</div>
+							<div class="sankaku33" data-aos="zoom-in-up"data-aos-duration="700">
+								<img src="images/sankaku3.png">
+							</div>
+							<div class="sankaku44" data-aos="zoom-in-up"data-aos-duration="700">
+								<img src="images/sankaku4.png">
+							</div>
+
+							<section class="contents200" data-aos="fade-right"data-aos-duration="600">
+								<p class="syoukaicon2" data-aos="fade-right"data-aos-duration="400">おしゃれな店構えで飲み屋街に佇む</p>	<!--オレンジ-->
+								<p class="syoukaicon20" data-aos="fade-right"data-aos-duration="400">「北新地サンド」</p>
+								<div class="syoukai00con2" data-aos="fade-right"data-aos-duration="400">
+									<p data-aos="fade-right" data-aos-duration="700">飲み屋街の一角にある</p>
+								</div>
+								<div class="syoukai00con211"data-aos="fade-right"data-aos-duration="400">
+									<p data-aos="fade-right" data-aos-duration="700">スタイリッシュな外観。</p>
+								</div>
+								<p class="syoukai00con20" data-aos="fade-right"data-aos-duration="900">北新地を訪れる大人たちから</p>
+								<p class="syoukai00con21" data-aos="fade-right"data-aos-duration="800">人気を集めるサンドイッチのお店。</p>
+								<p class="syoukai00con22" data-aos="fade-right"data-aos-duration="800">素材にこだわってひとつひとつ</p>
+								<p class="syoukai00con23" data-aos="fade-right"data-aos-duration="900">手作りされるサンドイッチを。</p>
+								<div class="iriiri44" data-aos="fade-up"data-aos-duration="900">
+									<img src="images/iriiri4.png">
+								</div>
+								<div class="iriiri33" data-aos="fade-up"data-aos-duration="1100">
+									<img src="images/iriiri3.png">
+								</div>
+								<div class="iriiri55" data-aos="fade-up"data-aos-duration="800">
+									<img src="images/iriiri5.png">
+								</div>
+								<div class="iriiri66" data-aos="fade-up"data-aos-duration="800">
+									<img src="images/iriiri6.png">
+								</div>
+								<div class="syoukai222"  data-aos="fade-left"data-aos-duration="600">
+									<img src="images/syoukai2.jpg">
+								</div>
+
+
+								<div class="sankaku100" data-aos="zoom-in-up"data-aos-duration="1100">
+									<img src="images/sankaku4.png">
+								</div>
+
+								<div class="sankaku101" data-aos="zoom-in-up"data-aos-duration="900">
+									<img src="images/sankaku5.png">
+								</div>
+
+								<div class="sankaku102" data-aos="zoom-in-up"data-aos-duration="700">
+									<img src="images/sankaku6.png">
+								</div>
+
+								<div class="sankaku103" data-aos="zoom-in-up"data-aos-duration="700">
+									<img src="images/sankaku2.png">
+								</div>
+
+								<div class="iriiri88" data-aos="zoom-in-right"data-aos-duration="3000">
+									<img src="images/iriiri7.png">
+								</div>
+
+								<div class="osisisi">
+									<div class="iriiri99" data-aos="fade-up"data-aos-duration="1000">
+										<img src="images/iriiri3.png">
+									</div>
+									<div class="osinagaki">
+										<a href="menu.html">
+											<div class="osinagakiimg"  data-aos="flip-left"data-aos-duration="1500">
+												<a id="about" href="menu.html">
+													<img src="images/oooo.jpeg">
+												</a>
+											</div>
+										</a>
+										<h3 data-aos="zoom-in-right"data-aos-duration="1900">MENU</h3>
+										<p data-aos="fade-right"data-aos-duration="1400">深夜でも購入可能な食べごたえ満点のサンドイッチ</p>
+										<p data-aos="fade-right"data-aos-duration="900">一番お召し上がり頂きたいのは出来立て熱々の</p>
+										<p data-aos="fade-right"data-aos-duration="500">カツサンド。 お土産用は急速にカツを冷却し</p>
+										<p data-aos="fade-right"data-aos-duration="400">旨みをギュッと閉じ込めます。</p>
+										<p data-aos="fade-right"data-aos-duration="900">次から次へと手が出てしまう一品です。</p>
+										<p data-aos="fade-right"data-aos-duration="1500">自分へのごほうびや、手土産にもぴったりの一品です。</p>
+									</div>
+									<div class="tenpoji2">
+										<a href="tenpo.html">
+											<div class="tenpojiimg"  data-aos="flip-right"data-aos-duration="2500">
+												<img src="images/eeee.jpg">
+											</div>
+										</a>
+										<h3 data-aos="zoom-in-left"data-aos-duration="2200">店舗情報</h3>
+										<p data-aos="fade-left"data-aos-duration="1600">夜の心斎橋で愛される心斎橋サンドの姉妹店</p>
+										<p data-aos="fade-left"data-aos-duration="1000">味わい深いサンドイッチを提供する、北新地サンド。</p>
+										<p data-aos="fade-left"data-aos-duration="500">飲み屋街の一角にあるスタイリッシュな外観で</p>
+										<p data-aos="fade-left"data-aos-duration="600">大人たちから人気を集めるサンドイッチのお店です。</p>
+										<p data-aos="fade-left"data-aos-duration="1100">お酒を飲んだ後でもついつい食べたくなるものばかりで</p>
+										<p data-aos="fade-left"data-aos-duration="1500">仕事帰りの方でもフラっと立ち寄れます。</p>
+									</div>
+								</div>
+							</section>
+						</section>
+						<div class="iriiri77" data-aos="fade-up"data-aos-duration="400">
+							<img src="images/iriiri8.png">
+						</div>
+						<div class="iriiri100" data-aos="fade-up"data-aos-duration="600">
+							<img src="images/iriiri9.png">
+						</div>
+					</section>
+
+				</div>
+
+			</div>
+
+			<div class="cd-fixed-bg cd-bg-2">
+				<div class="midasi">
+				</div>
+			</div>
+			<div class="cd-scrolling-bg cd-color-2">
+				<div class="midasi3" data-aos="zoom-out"data-aos-duration="400">
+					<h2>Concept</h2>
+				</div>
+				<a id="Concept"></a>
+				<div class="bakuhatu">
+					<div class="bakuhatu2">
+						<h2 data-aos="fade-right"data-aos-duration="500">爆発的人気を誇る</h2>
+					</div>
+					<h2 data-aos="fade-left"data-aos-duration="700">北新地の絶品サンドイッチ</h2>
+				</div>
+				<section class="contentscon211">
+
+				</section>
+
+				<section class="contents00con2">
+					<div class="ffff"  data-aos="fade-right"data-aos-duration="1000">
+						<img src="images/ffff.jpg">
+					</div>
+					<div class="con2111">
+						<div class="North" data-aos="fade-left"data-aos-duration="400">
+							<h3 data-aos="fade-left"data-aos-duration="600">When</h3>
+							<h3 data-aos="fade-left"data-aos-duration="600">North Shinchi Sand</h3>
+						</div>
+						<p data-aos="fade-left"data-aos-duration="900">2009年に心斎橋に本店をオープン。</p>
+						<p data-aos="fade-left"data-aos-duration="800">2014年5月に北新地に2号店を出店した</p>
+						<p data-aos="fade-left"data-aos-duration="1000">オリジナルサンドイッチの店。</p>
+						<p data-aos="fade-left"data-aos-duration="1100">タマゴカツサンドは、</p>
+						<p data-aos="fade-left"data-aos-duration="1000">1年がかりで作り上げた自慢のメニュー。</p>
+						<p data-aos="fade-left"data-aos-duration="1300">焼いた玉子をカツにするというアイデアと、</p>
+						<p data-aos="fade-left"data-aos-duration="1200">ほかにはない味が評判を呼び、</p>
+						<p data-aos="fade-left"data-aos-duration="1000">売り切れ必至の人気メニューとなっている。</p>
+						<p data-aos="fade-left"data-aos-duration="1100">ほかにも、ミルフィーユ状にした豚肉を揚げたものや、</p>
+						<p data-aos="fade-left"data-aos-duration="900">黒毛和牛を使ったステーキのカツサンドなど、</p>
+						<p data-aos="fade-left"data-aos-duration="800">ここだけのメニューが豊富にラインナップされている。</p>
+					</div>
+				</section>
+
+				<section class="contentscon2">
+					<div class="con21111">
+						<div class="kigen" data-aos="fade-up"data-aos-duration="300">
+							<p>北新地サンドは賞味期限2時間！</p>
+							<p>極上のタマゴサンドはここにあり！</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="contents00con3">
+					<div class="con3111">
+						<h3 data-aos="flip-down"data-aos-duration="200">あふれだす肉汁がたまらない「黒毛和牛ヘレカツサンド」</h3>
+						<div class="sio" data-aos="fade-up"data-aos-duration="700">
+							<p>A3ランクの黒毛和牛を使用した</p>
+							<p>「黒毛和牛ヘレカツサンド」（2,800円）。</p>
+							<p>お肉の旨味をギュッと凝縮。</p>
+							<p>ほんのりピンクのレアな仕上がりとなっており、</p>
+							<p>できたてのホカホカをガブっとほおばると、</p>
+							<p>口の中に肉汁が溢れ出します。</p>
+						</div>
+					</div>
+					<div class="con3herekatu"  data-aos="fade-left"data-aos-duration="800">
+						<img src="images/con3herekatu.jpg">
+					</div>
+				</section>
+
+				<section class="contentscon3">
+					<div class="con3tamago"  data-aos="fade-right"data-aos-duration="800">
+						<img src="images/con3tamago.jpg">
+					</div>
+					<div class="con31111">
+						<h3 data-aos="flip-down"data-aos-duration="100">新食感のサンドイッチ「タマゴカツサンド」</h3>
+						<div class="sio" data-aos="fade-up"data-aos-duration="700">
+							<p>たまごをサクサクのカツにした「タマゴカツサンド」（800円）。</p>
+							<p>中はフワフワ、外はサクッの新食感。</p>
+							<p>一度食べるとやみつきになる味わい。</p>
+							<p>タマゴサンド好きに是非おすすめしたい一品です。</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="contents00con32">
+					<div class="con311111">
+						<h3 data-aos="flip-down"data-aos-duration="300">お店の名物サンドイッチ「シオカツサンドポーク」</h3>
+						<div class="sio" data-aos="fade-up"data-aos-duration="700">
+							<p>お店もイチオシ「シオカツサンドポーク」（1,000円）。</p>
+							<p>味付けにシチリア産の岩塩とバター。</p>
+							<p>シンプルな見た目からは</p>
+							<p>想像がつかないような深い味わいが特徴。</p>
+						</div>
+					</div>
+					<div class="con3siokatu"  data-aos="fade-left"data-aos-duration="800">
+						<img src="images/con3siokatu.jpg">
+					</div>
+				</section>
+
+				<section class="contentscon2110">
+
+				</section>
+
+
+
+			</div>
+
+			<div class="cd-fixed-bg cd-bg-3">
+				<div class="midasi">
+				</div>
+			</div>
+
+			<div class="cd-scrolling-bg cd-color-3">
+				<div class="midasi4" data-aos="zoom-out"data-aos-duration="400">
+					<h2>Access</h2>
+				</div>
+				<div class="cd-container">
+					<div class="akusesu">
+						<h2>SHOP</h2>
+						<div class="akusesuback">
+
+							<div class="akusesu2" data-aos="fade-up"data-aos-duration="300">
+								<img src="images/akusesu1.jpg">
+								<h3>北新地 KITASINTI</h3>
+								<p class="juusyop">住所</p>
+								<p>〒530-0002<br>大阪府大阪市北区曾根崎新地１−２−１１ アレーナ 堂島</p>
+								<hr>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.3182144935963!2d135.49535231523203!3d34.6971529804354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQxJzQ5LjgiTiAxMzXCsDI5JzUxLjIiRQ!5e0!3m2!1sja!2sjp!4v1519109109408" width="300" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								<p class="akusesusyousai"><a href="akusesu.html">詳細はこちら</a></p>
+							</div>
+
+
+							<div class="akusesu3" data-aos="fade-up"data-aos-duration="300">
+								<img src="images/akusesu2.jpg">
+								<h3>心斎橋　SINSAIBASI</h3>
+								<p class="juusyop">住所</p>
+								<p>〒542-0083<br>大阪府大阪市中央区東心斎橋２丁目４−１８</p>
+								<hr>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.3463607662356!2d135.50220181504!3d34.67120688044198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e715c9d0ba23%3A0x74a7a7b1ccf0441f!2z5b-D5paO5qmLIOOCteODs-ODiQ!5e0!3m2!1sja!2sjp!4v1519119383971" width="300" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								<p class="akusesusyousai"><a href="akusesu2.html">詳細はこちら</a></p>
+							</div>
+
+						</div>
+
+						<div class="box00">
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+
+		</main>
+
+		<div id="footer">
+			<div class="text00">
+				<p>住所	大阪府大阪市北区曽根崎新地1-2-11 アレーナ堂島 1F</p>
+				<p>交通手段　JR北新地駅徒歩３分 北新地駅から161m</p>
+				<p>営業時間	18:00～翌4:00</p>
+				<p>定休日	日曜日・祝日</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+</body>
+</html>
